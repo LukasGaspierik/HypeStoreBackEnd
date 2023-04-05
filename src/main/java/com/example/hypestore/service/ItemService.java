@@ -27,6 +27,6 @@ public interface ItemService {
     List<Item> getAllAccessories();
     List<Item> getByPriceDesc();
     List<Item> getByPriceAsc();
-    List<Item> getBySize(String size);
+    //List<Item> getBySize(String size);
     //
 }
