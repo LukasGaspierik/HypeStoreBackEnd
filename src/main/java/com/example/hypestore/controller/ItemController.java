@@ -70,24 +70,38 @@ public class ItemController {
 
 
     //filter
+
+    //all
     @GetMapping("/getAll")
     public List<Item> listOfItems(){
         return itemService.getAllItems();
     }
-
+    //shoes
     @GetMapping("/getAllShoes")
     public List<Item> getAllShoes(){
         return itemService.getAllShoes();
     }
-
+    //clothing
     @GetMapping("/getAllClothing")
     public List<Item> getAllClothing(){
         return itemService.getAllClothing();
     }
-
+    //accessories
     @GetMapping("/getAllAccessories")
     public List<Item> getAllAccessories(){
         return itemService.getAllAccessories();
     }
+
+    @GetMapping("/getByPriceDesc")
+    public List<Item> getByPriceDesc(){
+        return itemService.getByPriceDesc();
+    }
+
+    @GetMapping("/getByPriceAsc")
+    public List<Item> getByPriceAsc(){
+        return itemService.getByPriceAsc();
+    }
+
+
     //
 }
