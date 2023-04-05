@@ -139,12 +139,17 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<Item> getByPriceDesc(){
-        return itemRepository.findByOrderByPriceDesc();
+        return itemRepository.findAll(Sort.by(Sort.Direction.DESC, "price"));
     }
 
     @Override
     public List<Item> getByPriceAsc(){
-        return itemRepository.findByOrderByPriceAsc();
+        return itemRepository.findAll(Sort.by(Sort.Direction.ASC, "price"));
+    }
+
+    @Override
+    public List<Item> getBySize(String size){
+        return itemRepository.findBySizeEqualsOrderByIdDesc(size);
     }
     //
 

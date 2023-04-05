@@ -102,6 +102,11 @@ public class ItemController {
         return itemService.getByPriceAsc();
     }
 
+    @GetMapping("/getBySize/{size}")
+    public List<Item> getBySize(@PathVariable String size){
+        return itemService.getBySize(size);
+    }
+
 
     //
 }
