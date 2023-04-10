@@ -15,6 +15,7 @@ public class Comment {
     private User user;
     private boolean isReported = false;
     private LocalDate date;
+    private String profilePic;
 
     @JsonIgnore
     @Access(AccessType.PROPERTY)
@@ -65,5 +66,13 @@ public class Comment {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
     }
 }

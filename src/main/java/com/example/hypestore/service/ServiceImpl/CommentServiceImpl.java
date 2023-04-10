@@ -28,6 +28,7 @@ public class CommentServiceImpl implements CommentService {
         coment1.setOwnerName(userService.getCurrentUser().getUserName());
         coment1.setComment(comment);
         coment1.setDate(LocalDate.now());
+        coment1.setProfilePic(user.getProfileImage());
         List<Comment> comments = user.getComments();
         comments.add(coment1);
         user.setComments(comments);
