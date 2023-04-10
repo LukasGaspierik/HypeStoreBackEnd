@@ -3,6 +3,7 @@ package com.example.hypestore.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 public class Comment {
@@ -10,9 +11,10 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String comment;
-    private int ownerId;
+    private String ownerName;
     private User user;
     private boolean isReported = false;
+    private LocalDate date;
 
     @JsonIgnore
     @Access(AccessType.PROPERTY)
@@ -41,12 +43,12 @@ public class Comment {
         this.comment = comment;
     }
 
-    public int getOwnerId() {
-        return ownerId;
+    public String getOwnerName() {
+        return ownerName;
     }
 
-    public void setOwnerId(int ownerId) {
-        this.ownerId = ownerId;
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 
     public boolean getIsReported() {
@@ -55,5 +57,13 @@ public class Comment {
 
     public void setIsReported(boolean isReported) {
         this.isReported = isReported;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
