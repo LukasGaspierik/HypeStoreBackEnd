@@ -14,7 +14,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/user")
 //@CrossOrigin(origins = "https://milanozaniak.github.io/")
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
 
     @Autowired
