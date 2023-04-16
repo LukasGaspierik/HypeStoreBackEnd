@@ -18,16 +18,18 @@ public class User {
     private String roles;
     private double rating;
     private String profileImage;
+    private String facebook;
+    private String instagram;
 
     @OneToMany(mappedBy="user")
     private List<Item> items;
 
-    @ElementCollection
-    @CollectionTable(name = "favitems")
+    @OneToMany
+    @JoinColumn(name = "favItems")
     private List<Item> favItems = new ArrayList<>();
 
-    @ElementCollection
-    @CollectionTable(name = "reservedItems")
+    @OneToMany
+    @JoinColumn(name = "reservedItems")
     private List<Item> reservedItems = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
@@ -139,6 +141,22 @@ public class User {
 
     public void setProfileImage(String profileImage) {
         this.profileImage = profileImage;
+    }
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
     }
 
 
