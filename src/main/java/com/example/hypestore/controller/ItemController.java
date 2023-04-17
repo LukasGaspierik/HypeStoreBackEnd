@@ -59,8 +59,8 @@ public class ItemController {
         return itemService.getCurrentItem(id);
     }
 
-    @GetMapping("/del/{id}")
-    public void deleteItem(@PathVariable Integer id) throws Exception {
+    @GetMapping("/del")
+    public void deleteItem(@RequestParam("id") Integer id) throws Exception {
         itemService.deleteItemById(id);
     }
 
