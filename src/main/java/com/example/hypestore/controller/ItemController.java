@@ -59,7 +59,7 @@ public class ItemController {
         return itemService.getCurrentItem(id);
     }
 
-    @GetMapping("/del")
+    @PostMapping("/del")
     public void deleteItem(@RequestParam("id") Integer id) throws Exception {
         itemService.deleteItemById(id);
     }
