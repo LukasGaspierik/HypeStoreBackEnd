@@ -25,11 +25,19 @@ public class User {
     private List<Item> items;
 
     @OneToMany
-    @JoinColumn(name = "favItems")
+    @JoinTable(
+            name = "user_favitems",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "item_id")
+    )
     private List<Item> favItems = new ArrayList<>();
 
     @OneToMany
-    @JoinColumn(name = "reservedItems")
+    @JoinTable(
+            name = "user_reserveditems",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "item_id")
+    )
     private List<Item> reservedItems = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
