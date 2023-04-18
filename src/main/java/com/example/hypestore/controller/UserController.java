@@ -100,12 +100,12 @@ public class UserController {
     }
 
     @PostMapping("/setInstagram")
-    public void setInstagram(String instagram){
+    public void setInstagram(@RequestParam("ig") String instagram){
         userService.addInstagram(instagram);
     }
 
     @PostMapping("/setFacebook")
-    public void setFacebook(String facebook){
+    public void setFacebook(@RequestParam("fb") String facebook){
         userService.addFacebook(facebook);
     }
 
