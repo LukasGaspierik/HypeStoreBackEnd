@@ -175,12 +175,14 @@ public class UserServiceImpl implements UserService {
     public void addInstagram(String instagram){
         User user = getCurrentUser();
         user.setInstagram(instagram);
+        userRepository.save(user);
     }
 
     @Override
     public void addFacebook(String facebook){
         User user = getCurrentUser();
         user.setFacebook(facebook);
+        userRepository.save(user);
     }
 
 
